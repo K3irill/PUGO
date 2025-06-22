@@ -4,6 +4,7 @@ const User = require('../models/User')
 // Получить информацию о пользователе
 const getUser = async telegramId => {
 	const user = await User.findOne({ where: { telegramId } })
+
 	if (!user) {
 		throw new Error('Пользователь не найден')
 	}

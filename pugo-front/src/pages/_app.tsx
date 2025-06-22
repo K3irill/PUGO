@@ -28,15 +28,11 @@ function AppContent({ Component, pageProps }: MyAppProps) {
   const { i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState(true); 
 
-  useEffect(()=>{
-
-    console.log('render')
-  },[])
-
-  console.log('render-type-2')
 
   useStarBackground()
   
+
+
   const loadUserData = async () => {
     if (!user.id) return;
 
@@ -192,6 +188,8 @@ function AppContent({ Component, pageProps }: MyAppProps) {
                 cards: data.userInfo.cards || null,
                 ships: data.userInfo.ships || null,
                 lang: data.userInfo.lang || 'en',
+                lastLoginAt: data.userInfo.lang || null,
+                loginStreak: data.userInfo.lang || 1,
               })
             );
           }
@@ -202,7 +200,7 @@ function AppContent({ Component, pageProps }: MyAppProps) {
 
       const interval = setInterval(() => {
         getUserInfo();
-      }, 120000); // Обновляем данные каждые 2 минуты
+      }, 120000); 
 
       return () => clearInterval(interval);
     }

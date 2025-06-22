@@ -131,7 +131,7 @@
 					"ads": {
 						"title": "Programm für Content Creator",
 						"description": "Verdiene Token durch die Bewerbung von BIFS via:",
-            "reward": "Prämie",
+						"reward": "Prämie",
 						"methods": [
 							{
 								"title": "Soziale Medien",
@@ -529,15 +529,14 @@
 					"title": "Rangliste",
 					"titleWithBorder": false
 				},
-        "headerRow": {
-          "avatarTitle": "Avatare",
-          "name_coinsTitle": "name/münzen",
-          "position": "Position"
-        },
-        "footerRow": {
-          "position": "ihre Position"
-        }
-        
+				"headerRow": {
+					"avatarTitle": "Avatare",
+					"name_coinsTitle": "name/münzen",
+					"position": "Position"
+				},
+				"footerRow": {
+					"position": "ihre Position"
+				}
 			},
 			"map": {
 				"top_section": {
@@ -827,6 +826,13 @@
 					"footer": "Crystal Miner v1.1 · © 2025 BIFS Ecosystem"
 				}
 			}
+		},
+		"dailyAwards": {
+			"title": "Tägliche Belohnungen",
+			"description": "Komm jeden Tag zurück und erhalte immer mehr Tokens!",
+			"day": "Tag {{day}}",
+			"today": "Heute!",
+			"close": "Schließen"
 		}
 	}
 }

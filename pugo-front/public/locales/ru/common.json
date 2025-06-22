@@ -131,7 +131,7 @@
 					"ads": {
 						"title": "Программа для создателей контента",
 						"description": "Зарабатывайте токены, продвигая BIFS через:",
-            "reward": "Награда",
+						"reward": "Награда",
 						"methods": [
 							{
 								"title": "Соцсети",
@@ -529,13 +529,13 @@
 					"title": "Рейтинг",
 					"titleWithBorder": false
 				}, "headerRow": {
-          "avatarTitle": "Аватарка",
-          "name_coinsTitle": "Имя/Монеты",
-          "position": "Позиция"
-        },
-        "footerRow": {
-          "position": "Ваша позиция"
-        }
+					"avatarTitle": "Аватарка",
+					"name_coinsTitle": "Имя/Монеты",
+					"position": "Позиция"
+				},
+				"footerRow": {
+					"position": "Ваша позиция"
+				}
 			},
 			"map": {
 				"top_section": {
@@ -825,6 +825,13 @@
 					"footer": "Crystal Miner v1.1 · © 2025 BIFS Ecosystem"
 				}
 			}
-		}
+		},
+    "dailyAwards": {
+      "title": "Ежедневные награды",
+      "description": "Заходите каждый день и получайте всё больше токенов!",
+      "day": "День {{day}}",
+      "today": "Сегодня!",
+      "close": "Закрыть"
+    }
 	}
 }

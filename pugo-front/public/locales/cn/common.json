@@ -1,8 +1,8 @@
 {
 	"content": {
 		"messages": [
-			"BIFS代币可通过完成任务获取——快去‘任务’板块查看吧！",
-			"狗狗队长说：‘这里靠做任务赚代币，而不是靠点击！’",
+			"BIFS代币可通过完成任务获取——快去'任务'板块查看吧！",
+			"狗狗队长说：'这里靠做任务赚代币，而不是靠点击！'",
 			"船员小贴士：完成任务获得BIFS，而非疯狂点击",
 			"冷知识：我们的顶级玩家根本不点击——他们只做任务！",
 			"想要BIFS？开宝箱、做任务，或者直接飞向太空吧！",
@@ -16,7 +16,7 @@
 			"收益曲线：任务越多=BIFS越多，点击越多=手指越累",
 			"事实：我们的玩家0%时间点击，100%时间做任务",
 			"科学证明：点击不影响BIFS汇率，但游戏活跃度可以！",
-			"想进名人堂？那里可没有‘最佳点击手’奖项"
+			"想进名人堂？那里可没有'最佳点击手'奖项"
 		],
 		"welcomeSlider": {
 			"slides": [
@@ -131,7 +131,7 @@
 					"ads": {
 						"title": "创作者计划",
 						"description": "通过以下方式推广BIFS赚取代币：",
-            "reward": "酬金",
+						"reward": "酬金",
 						"methods": [
 							{
 								"title": "社交媒体",
@@ -389,13 +389,13 @@
 							"id": "miner",
 							"title": "水晶矿工",
 							"description": "挖掘水晶获取BIFS",
-									"image": "/games/miner-preview.jpg"
+							"image": "/games/miner-preview.jpg"
 						},
 						{
 							"id": "spacepug",
 							"title": "太空狗",
 							"description": "太空狗的星际冒险",
-								"image": "/games/spacepug-preview.jpg"
+							"image": "/games/spacepug-preview.jpg"
 						}
 					]
 				}
@@ -529,13 +529,13 @@
 					"title": "排行榜",
 					"titleWithBorder": false
 				}, "headerRow": {
-          "avatarTitle": "阿凡达",
-          "name_coinsTitle": "名称/硬币",
-          "position": "职位"
-        },
-        "footerRow": {
-          "position": "你的职位"
-        }
+					"avatarTitle": "阿凡达",
+					"name_coinsTitle": "名称/硬币",
+					"position": "职位"
+				},
+				"footerRow": {
+					"position": "你的职位"
+				}
 			},
 			"map": {
 				"top_section": {
@@ -825,6 +825,12 @@
 					"footer": "水晶矿工 v1.1 · © 2025 BIFS生态系统"
 				}
 			}
-		}
+		},	"dailyAwards": {
+      "title": "每日奖励",
+      "description": "每天回来可获得更多代币！",
+      "day": "第{{day}}天",
+      "today": "今天！",
+      "close": "关闭"
+    }
 	}
 }

@@ -87,6 +87,11 @@ export const userInfoApi = createApi({
 				body: { telegramId, lang },
 			}),
 		}),
+    checkDailyAward: builder.query({
+			query: telegramId => `user/check-award/${telegramId}`,
+		}),
+
+
 	}),
 })
 
@@ -97,4 +102,5 @@ export const {
 	useActivateMiningMutation,
 	useSetUserStatusMutation,
 	useChangeLangMutation,
+  useCheckDailyAwardQuery
 } = userInfoApi

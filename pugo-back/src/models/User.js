@@ -73,6 +73,14 @@ const User = sequelize.define(
 			type: DataTypes.ARRAY(DataTypes.JSONB),
 			defaultValue: [],
 		},
+    lastLoginAt: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    loginStreak: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
 	},
 	{
 		timestamps: true,

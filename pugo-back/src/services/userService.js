@@ -1,6 +1,7 @@
 const LANGUAGES = require('../languages')
 const { User, Task, UserTask } = require('../models')
 const generateReferralCode = require('../utils/generateReferralCode')
+const { handleDailyLogin } = require('../utils/loginAwards')
 const {
 	defineUserStatus,
 	defineMiningAwardByStatus,
@@ -49,21 +50,24 @@ const createUser = async (
 // Функция поиска пользователя по Telegram ID
 const getUserByTelegramId = async telegramId => {
 	console.log(`🔍 Ищу пользователя в БД: telegramId=${telegramId}`)
+	if (!telegramId) {
+		throw new Error('telegramId is required')
+	}
 	const user = await User.findOne({ where: { telegramId } })
 	console.log(`🔍 Результат поиска: ${user ? 'Найден' : 'Не найден'}`)
 	return user ? user : null
 }
 
 const getUsers = async () => {
-  console.log(`🔍 Получаю всех пользователей из БД`);
-  try {
-    const users = await User.findAll();
-    console.log(`🔍 Найдено пользователей: ${users.length}`);
-    return users;
-  } catch (error) {
-    console.error('Ошибка при получении пользователей:', error);
-    throw error;
-  }
+	console.log(`🔍 Получаю всех пользователей из БД`);
+	try {
+		const users = await User.findAll();
+		console.log(`🔍 Найдено пользователей: ${users.length}`);
+		return users;
+	} catch (error) {
+		console.error('Ошибка при получении пользователей:', error);
+		throw error;
+	}
 };
 
 const isLanguageSupported = lang => {
@@ -71,6 +75,9 @@ const isLanguageSupported = lang => {
 }
 
 const changeUserLang = async (telegramId, lang) => {
+	if (!telegramId) {
+		throw new Error('telegramId is required')
+	}
 	const user = await User.findOne({ where: { telegramId } })
 	console.log(lang)
 	if (!user) {
@@ -177,6 +184,9 @@ const updateUserTokens = async (telegramId, amount, isPlus = true) => {
 }
 
 const setStatusForUser = async (telegramId, status) => {
+	if (!telegramId) {
+		throw new Error('telegramId is required')
+	}
 	const user = await User.findOne({ where: { telegramId } })
 
 	if (!user) {
@@ -213,8 +223,10 @@ const setStatusForUser = async (telegramId, status) => {
 }
 
 const enableMiningForUser = async (telegramId, days) => {
+	if (!telegramId) {
+		throw new Error('telegramId is required')
+	}
 	const user = await User.findOne({ where: { telegramId } })
-
 	if (!user) {
 		throw new Error('Пользователь не найден')
 	}
@@ -259,10 +271,12 @@ const checkAndAddPugoDaily = async () => {
 	}
 }
 const addTransaction = async (telegramId, stars, description, amount) => {
+	if (!telegramId) {
+		throw new Error('telegramId is required')
+	}
 	const user = await User.findOne({ where: { telegramId } })
-
 	if (!user) {
-		throw new Error('User not found')
+		throw new Error('Пользователь не найден')
 	}
 
 	const transaction = {

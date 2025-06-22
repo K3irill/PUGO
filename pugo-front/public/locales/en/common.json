@@ -4,13 +4,13 @@
 			"In BIFS, tokens are earned through missions – check out the 'Tasks' section!",
 			"Mop-Captain says: 'Tokens are earned here, not clicked for!'",
 			"Crew tip: completing missions earns BIFS, not clicks",
-			"Fun fact: our top players don’t click at all – they complete quests!",
+			"Fun fact: our top players don't click at all – they complete quests!",
 			"Want BIFS? Open cases, complete tasks, and finally take off into space!",
 			"Remember: 1 completed task = 1000+ BIFS, 1000 clicks = 0 BIFS",
 			"In space, brains are valued, not click speed – try gaming tasks!",
 			"On the BIFS planet, different rules apply – clicks don't make a difference!",
 			"The prototype of the pug astronaut discovered: smart strategies > pointless clicks",
-			"Important announcement: the click server is temporarily down for maintenance (just kidding, we’re not a clicker!)",
+			"Important announcement: the click server is temporarily down for maintenance (just kidding, we're not a clicker!)",
 			"Cosmic roulette: click 1000 times and... get nothing. Try earning in games!",
 			"Bot-analyst reports: 92% of BIFS is earned through gaming activities",
 			"Dependency chart: more tasks = more BIFS, more clicks = tired finger",
@@ -131,7 +131,7 @@
 					"ads": {
 						"title": "Content Creator Program",
 						"description": "Earn tokens by promoting BIFS through:",
-            "reward": "Reward",
+						"reward": "Reward",
 						"methods": [
 							{
 								"title": "Social Media",
@@ -389,13 +389,13 @@
 							"id": "miner",
 							"title": "Crystal Miner",
 							"description": "Mine crystals and get BIFS",
-									"image": "/games/miner-preview.jpg"
+							"image": "/games/miner-preview.jpg"
 						},
 						{
 							"id": "spacepug",
 							"title": "Space Pug",
 							"description": "Space adventures of an astronaut pug",
-						"image": "/games/spacepug-preview.jpg"
+							"image": "/games/spacepug-preview.jpg"
 						}
 					]
 				}
@@ -527,13 +527,13 @@
 					"title": "Rating",
 					"titleWithBorder": false
 				}, "headerRow": {
-          "avatarTitle": "avatar",
-          "name_coinsTitle": "name/coins",
-          "position": "position"
-        },
-        "footerRow": {
-          "position": "your position"
-        }
+					"avatarTitle": "avatar",
+					"name_coinsTitle": "name/coins",
+					"position": "position"
+				},
+				"footerRow": {
+					"position": "your position"
+				}
 			},
 			"map": {
 				"top_section": {
@@ -822,6 +822,13 @@
 					"footer": "Crystal Miner v1.1 · © 2025 BIFS Ecosystem"
 				}
 			}
-		}
+		},
+    "dailyAwards": {
+      "title": "Daily Awards",
+      "description": "Come back every day and get more and more tokens!",
+      "day": "Day {{day}}",
+      "today": "Today!",
+      "close": "Close"
+    }
 	}
 }

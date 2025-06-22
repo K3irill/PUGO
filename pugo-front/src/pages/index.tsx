@@ -13,12 +13,18 @@ import {
 	HeaderContent,
 	PagesTypes,
 } from '@/types/types'
+import { useCheckDailyAwardQuery } from '@/store/services/api/userApi'
+import { RootState } from '@/store/store'
+import { useSelector } from 'react-redux'
+import DailyAwards from '@/components/DailyAwards/DailyAwards'
 
 const HomePage = () => {
 	const { t, ready } = useTranslation('common')
 	const [isFirstTime, setIsFirstTime] = useState(false)
 	const [isLoading, setIsLoading] = useState(true)
 	const [isClient, setIsClient] = useState(false)
+  const user = useSelector((state: RootState) => state.user);
+  const { data: dataDailyAwardChecking, error: errorDailyAwardChecking, isLoading: isDailyAwardCheckingLoading } = useCheckDailyAwardQuery(user.id)
 
 	useEffect(() => {
 		setIsClient(true)
@@ -37,18 +43,28 @@ const HomePage = () => {
 	if (isFirstTime)
 		return <NoobSlider content={content} onClose={handleSliderClose} />
 
+
+
+
 	if (!content?.pages?.home) {
 		console.error('Invalid content structure:', content)
 		return <div>Error loading content</div>
 	}
 
+
 	return (
+    <>
+    	 { (dataDailyAwardChecking && !!dataDailyAwardChecking.result && user.id) &&
+		 <DailyAwards day={dataDailyAwardChecking.result.loginStreak} />
+	}
 		<MainLayout
 			header={content.header || STATIC_CONTENT.header}
 			footer={content.footer || STATIC_CONTENT.footer}
 		>
 			<Home data={content.pages.home} />
 		</MainLayout>
+ 
+    </>
 	)
 }
 

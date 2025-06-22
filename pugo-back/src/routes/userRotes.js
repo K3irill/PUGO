@@ -9,8 +9,10 @@ const {
 	setStatusForUser,
 	changeUserLang,
 	getUsers,
+
 } = require('../services/userService')
 const { defineUserStatus } = require('../utils/utils')
+const { checkLoginAward } = require('../utils/loginAwards')
 const router = express.Router()
 
 router.post('/lang', async (req, res) => {
@@ -50,6 +52,7 @@ router.get('/:telegramId', async (req, res) => {
 	try {
 		const { telegramId } = req.params
 		const userInfo = await getUser(telegramId)
+
 		res.status(200).json({ success: true, userInfo })
 	} catch (error) {
 		console.error(error)
@@ -60,7 +63,22 @@ router.get('/:telegramId', async (req, res) => {
 	}
 })
 
-
+router.get('/check-award/:telegramId', async (req, res) => {
+	try {
+		const { telegramId } = req.params
+    if (!telegramId || telegramId === 'null' || telegramId === 'undefined') {
+      return res.status(400).json({ success: false, message: 'Некорректный telegramId' })
+    }
+		const result = await checkLoginAward(telegramId)
+		res.status(200).json({ success: true, result })
+	} catch (error) {
+		console.error(error)
+		res.status(500).json({
+			success: false,
+			message: 'Ошибка получения информации о пользователе',
+		})
+	}
+})
 
 // Пополнить баланс
 router.post('/deposit', depositBalance)

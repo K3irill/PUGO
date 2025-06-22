@@ -36,6 +36,8 @@ export interface UserState {
 	cards: BifCardType[] | null
 	ships: BifShipType[] | null
   lang: string 
+  lastLoginAt: Date | null
+  loginStreak: number
 }
 
 const initialState: UserState = {
@@ -59,7 +61,9 @@ const initialState: UserState = {
 	spacePugRecord: null,
 	cards: null,
 	ships: null,
-  lang: 'en'
+  lang: 'en',
+  lastLoginAt:null,
+  loginStreak: 1
 }
 
 const saveStateToLocalStorage = (state: UserState) => {
